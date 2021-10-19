@@ -1,0 +1,29 @@
+plugins {
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}
+
+subprojects {
+
+    group = 'cz.klasik'
+    version = '1.0.0'
+
+    apply plugin: 'java'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'java-library'
+
+    repositories {
+        mavenCentral()
+    }
+
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom("org.springframework.boot:spring-boot-dependencies:2.1.11.RELEASE")
+        }
+    }
+}

@@ -1,0 +1,4 @@
+rootProject.name = 'spring-data-tutorial'
+
+include 'common'
+include 'demo-jpa'
